@@ -1,0 +1,1 @@
+/usr/bin/clang++  -std=c++1y -O3 -arch x86_64 -arch i386 -dynamiclib -Wl,-headerpad_max_install_names  -o libpy_shared.dylib -install_name /Users/njazz/Documents/github/max-py/build/libpy_shared.dylib CMakeFiles/py_shared.dir/src/lib/dyn_class.cpp.o CMakeFiles/py_shared.dir/src/lib/convert.cpp.o CMakeFiles/py_shared.dir/src/lib/module.cpp.o -undefined dynamic_lookup 

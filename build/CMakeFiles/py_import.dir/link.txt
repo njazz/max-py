@@ -1,0 +1,1 @@
+/usr/bin/clang++  -std=c++1y -O3 -arch x86_64 -arch i386 -bundle -Wl,-headerpad_max_install_names  -o py.import.mxo/Contents/MacOS/py.import CMakeFiles/py_import.dir/src/py_import.cpp.o libpy_shared.dylib -undefined dynamic_lookup /usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib 

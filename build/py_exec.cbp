@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="py_exec"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\pybind11\;CMake Files\pybind11\tools\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_func">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.func.mxo/Contents/MacOS/py.func" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_func"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_func/fast">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.func.mxo/Contents/MacOS/py.func" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_func/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_bindfunc">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.bindfunc.mxo/Contents/MacOS/py.bindfunc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_bindfunc"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_bindfunc/fast">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.bindfunc.mxo/Contents/MacOS/py.bindfunc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_bindfunc/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_module">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.module.mxo/Contents/MacOS/py.module" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_module"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_module/fast">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.module.mxo/Contents/MacOS/py.module" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_module/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_shared">
+				<Option output="/Users/njazz/Documents/github/max-py/build/libpy_shared.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_shared"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_shared/fast">
+				<Option output="/Users/njazz/Documents/github/max-py/build/libpy_shared.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_shared/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_import">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.import.mxo/Contents/MacOS/py.import" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_import"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_import/fast">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.import.mxo/Contents/MacOS/py.import" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_import/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_exec">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.exec.mxo/Contents/MacOS/py.exec" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_exec"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_exec/fast">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.exec.mxo/Contents/MacOS/py.exec" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_exec/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_eval">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.eval.mxo/Contents/MacOS/py.eval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_eval"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="py_eval/fast">
+				<Option output="/Users/njazz/Documents/github/max-py/build/py.eval.mxo/Contents/MacOS/py.eval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/njazz/Documents/github/max-py/build"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/njazz/Documents/github/max-py/."/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/./src/lib"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/../max-sdk-7.3.3/source/c74support/max-includes"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib"/>
+					<Add directory="/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Users/njazz/Documents/github/max-py/pybind11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 py_eval/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/njazz/Documents/github/max-py/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/lib/convert.cpp">
+			<Option target="py_shared"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/lib/convert.hpp">
+			<Option target="py_shared"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/lib/dyn_class.cpp">
+			<Option target="py_shared"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/lib/dyn_class.hpp">
+			<Option target="py_shared"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/lib/module.cpp">
+			<Option target="py_shared"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/py_bindfunc.cpp">
+			<Option target="py_bindfunc"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/py_eval.cpp">
+			<Option target="py_eval"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/py_exec.cpp">
+			<Option target="py_exec"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/py_func.cpp">
+			<Option target="py_func"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/py_import.cpp">
+			<Option target="py_import"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/src/py_module.cpp">
+			<Option target="py_module"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/pybind11/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\pybind11\"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/pybind11/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\pybind11\"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/pybind11/tools/pybind11Tools.cmake">
+			<Option virtualFolder="CMake Files\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/pybind11/tools/FindPythonLibsNew.cmake">
+			<Option virtualFolder="CMake Files\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/pybind11/tools/pybind11Tools.cmake">
+			<Option virtualFolder="CMake Files\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/github/max-py/pybind11/tools/FindPythonLibsNew.cmake">
+			<Option virtualFolder="CMake Files\pybind11\tools\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
