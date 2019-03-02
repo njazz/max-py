@@ -26,8 +26,8 @@ include_directories(./src/lib)
 include_directories(submodules/max-sdk/source/c74support/max-includes)
 
 # TODO: python version
-find_package(PythonInterp 3 REQUIRED)
-find_package(PythonLibs 3 REQUIRED)
+find_package(PythonInterp 2 REQUIRED)
+find_package(PythonLibs 2 REQUIRED)
 
 INCLUDE_DIRECTORIES(${PYTHON_LIBRARIES})
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_DIRS})
