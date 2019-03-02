@@ -1,0 +1,6 @@
+[submodule "submodules/max-sdk"]
+	path = submodules/max-sdk
+	url = https://github.com/Cycling74/max-sdk
+[submodule "submodules/pybind11"]
+	path = submodules/pybind11
+	url = https://github.com/pybind/pybind11

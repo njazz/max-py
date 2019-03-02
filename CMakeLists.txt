@@ -19,9 +19,11 @@ include_directories(./src)
 include_directories(./src/lib)
 
 # TODO: choose max sdk / submodule?
-include_directories(${PROJECT_SOURCE_DIR}/../max-sdk-7.3.3/source/c74support/max-includes)
+#include_directories(${PROJECT_SOURCE_DIR}/../max-sdk-7.3.3/source/c74support/max-includes)
 #include_directories(${PROJECT_SOURCE_DIR}/../max-sdk-7.1.0/source/c74support/max-includes)
 #include_directories(${PROJECT_SOURCE_DIR}/../maxSDK-6.1.4/c74support/max-includes)
+
+include_directories(submodules/max-sdk/source/c74support/max-includes)
 
 # TODO: python version
 find_package(PythonInterp 3 REQUIRED)
@@ -30,7 +32,7 @@ find_package(PythonLibs 3 REQUIRED)
 INCLUDE_DIRECTORIES(${PYTHON_LIBRARIES})
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_DIRS})
 
-add_subdirectory(pybind11)
+add_subdirectory(submodules/pybind11)
 
 set (CMAKE_OSX_ARCHITECTURES "x86_64" "i386")
 
