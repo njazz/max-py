@@ -108,7 +108,7 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     py_import_class = c;
 
-    init_interpreter();
+    maxpy_init();
 
     object_post((t_object*)py_import_class, "py.import: loaded");
 

@@ -1,5 +1,9 @@
 // py.exec
 
+// anything:    run list (>1 elements) as python code
+// set:         set code without output
+// bang:        run previously set code
+
 #include <stdarg.h>
 
 #include "compatibility.h"
@@ -24,37 +28,36 @@ namespace py = pybind11;
 
 #include "convert.hpp"
 
+#include "py_box.hpp"
 //
-typedef struct _py_exec {
-    t_object ob;
-    void* out1;
+typedef struct _py_exec : public PyBox {
+//    t_object ob;
+//    void* outlet_1;
 
     std::string code = "";
 
 } t_py_exec;
 
-//1
+//
 void* py_exec_new(t_symbol* s, long argc, t_atom* argv);
 void py_exec_free(t_py_exec* x);
-
 void py_exec_message(t_py_exec* x, t_symbol* s, long argc, t_atom* argv);
 
+//
 void* py_exec_class;
 
 #pragma mark -
 
 void py_exec_set(t_py_exec* x, t_symbol* s, long argc, t_atom* argv)
 {
-    x->code = to_string(argc,argv);
+    x->code = to_string(argc, argv);
 }
 
 void py_exec_bang(t_py_exec* x);
 
 void py_exec_message(t_py_exec* x, t_symbol* s, long argc, t_atom* argv)
 {
-    x->code = (s) ? (std::string(s->s_name) + " ") : "";
-    x->code += to_string(argc,argv);
-
+    x->code = to_string(s, argc, argv);
     py_exec_bang(x);
 }
 
@@ -75,7 +78,7 @@ void* py_exec_new(t_symbol* s, long argc, t_atom* argv)
 
     if ((x = (t_py_exec*)object_alloc((t_class*)py_exec_class))) {
 
-        x->out1 = outlet_new(x, NULL);
+        x->outlet_1 = outlet_new(x, NULL);
     }
 
     return (x);
@@ -104,18 +107,12 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     py_exec_class = c;
 
-    init_interpreter();
-
-    try {
-        py::exec("import maxpy as max");
-    } catch (std::exception& e) {
-        error("py.exec: failed");
-    }
+    maxpy_init();
 
     object_post((t_object*)py_exec_class, "py_exec: loaded");
 
-    dyn_class_create("py.test_class");
-    dyn_class_add_method("py.test_class", "tester");
+    //    dyn_class_create("py.test_class");
+    //    dyn_class_add_method("py.test_class", "tester");
 
     return 0;
 }

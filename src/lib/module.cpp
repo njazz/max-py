@@ -6,11 +6,34 @@
 #include "ext_obex.h"
 
 #include <pybind11/embed.h>
+#include <pybind11/stl.h>
 namespace py = pybind11;
+
+#include <memory>
+
+#include "convert.hpp"
+
+#include "e_object.hpp"
 
 extern "C" {
 PYBIND11_EMBEDDED_MODULE(maxpy, m)
 {
+    py::class_<EObject, EObjectPtr>(m, "object")
+        .def("inlet_count", &EObject::InletCount)
+        .def("outlet_count", &EObject::OutletCount)
+
+        .def("class_name", &EObject::ClassName)
+        .def("namespace", &EObject::Namespace)
+
+        .def("is_none", &EObject::IsNone)
+
+        .def("message", &EObject::Message)
+
+        .def("method_names", &EObject::MethodNames)
+
+        .def("parent_patch", &EObject::ParentPatch)
+        ;
+
     m.def("post", [](std::string s) {
         post(s.c_str());
     });
@@ -19,34 +42,9 @@ PYBIND11_EMBEDDED_MODULE(maxpy, m)
         error(s.c_str());
     });
 
-    m.def("object", [](std::string n) -> int {
-        //        auto p = object_new(NULL, gensym(n.c_str()));
-        auto cl = class_findbyname(CLASS_BOX, gensym(n.c_str()));
-        if (!cl)
-            return 0;
-
-        post("class %s ok", n.c_str());
-
-        auto p = object_new(CLASS_BOX, gensym(n.c_str())); //newobject(cl);
-        // object_new_parse
-
-        post("object: %i ", (((long)p) > 0));
-
-        t_symbol** out;
-        long c = 0;
-        if (p) {
-            post("inlets %i", inlet_count((t_object*)p));
-            post("outlets %i", outlet_count((t_object*)p));
-
-            object_attr_getnames(p, &c, &out);
-
-            for (int i = 0; i < c; i++) {
-                post("attribute: %s", out[i]->s_name);
-            }
-        }
-
-        return (p != 0);
+    m.def("new_object", [](std::string n) -> std::shared_ptr<EObject> {
+        auto ret = std::make_shared<EObject>(n);
+        return ret;
     });
-
 }
 }

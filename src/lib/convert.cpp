@@ -8,7 +8,7 @@ static bool _initialized = false;
 #include <chrono>
 
 extern "C" {
-extern void init_interpreter()
+extern void maxpy_init()
 {
     if (_initialized)
         return;
@@ -20,6 +20,11 @@ extern void init_interpreter()
     auto obj = py::eval("platform.python_version()");
     post("Python version: %s", obj.cast<std::string>().c_str());
 
+    try {
+        py::exec("import maxpy as max");
+    } catch (std::exception& e) {
+        error("failed to load maxpy module");
+    }
 }
 }
 
@@ -134,17 +139,15 @@ t_atom make_atom_obj(py::handle obj)
 //    return { ret }; //{make_atom(py::str(obj).cast<std::string>()) };
 //}
 
-extern void to_atoms(std::vector<c_atom>& dest, const py::handle& obj)
+extern void to_atoms(std::vector<c_atom>& dest, const pybind11::object &obj)
 {
 
     if (obj.is_none())
-        //        return {};
+    //        return {};
     {
         dest.resize(0);
         return;
-}
-
-
+    }
 
     if (py::isinstance<py::list>(obj)) {
 
@@ -163,20 +166,18 @@ extern void to_atoms(std::vector<c_atom>& dest, const py::handle& obj)
 
         //        post("len %i", lst_.size());
 
-
-
-                for (int i = 0; i < len_; i++) {
-//        for (auto& e : obj) {
+        for (int i = 0; i < len_; i++) {
+            //        for (auto& e : obj) {
 
             //                        c_atom a;
             //                        a=e;
             //                        ret.push_back(a);
 
-//                    auto st = std::chrono::high_resolution_clock::now();
-            dest[i] = PyList_GetItem(obj.ptr(),i);//e;
-//            i++;
+            //                    auto st = std::chrono::high_resolution_clock::now();
+            dest[i] = PyList_GetItem(obj.ptr(), i); //e;
+            //            i++;
 
-//            post("atom convert time %f", std::chrono::high_resolution_clock::now()-st);
+            //            post("atom convert time %f", std::chrono::high_resolution_clock::now()-st);
 
             //            ret[i] = lst_[i]; //e;
             //            ret[i] = make_atom_obj(e);//lst_[i]);
@@ -196,6 +197,8 @@ extern void to_atoms(std::vector<c_atom>& dest, const py::handle& obj)
     //    ret = obj;
     //    return { ret }; //{make_atom(py::str(obj).cast<std::string>()) };
 }
+
+//extern void to_atoms(std::vector<c_atom>& dest, const std::vector<T>& vec)
 
 // UNUSED:
 //extern void to_atoms(std::vector<t_atom>& dest, const py::object& obj)
@@ -250,14 +253,22 @@ extern py::object to_object(long argc, t_atom* argv)
     return py::none();
 }
 
-py::object to_object(t_symbol* s, long argc, t_atom *argv)
+py::object to_object(t_symbol* s, long argc, t_atom* argv)
 {
-    if (argc==0)
+    if (argc == 0)
         if (s)
             return py::str(s->s_name);
 
-    return to_object(argc,argv);
+    return to_object(argc, argv);
+}
 
+extern std::string to_string(t_symbol* s, long argc, t_atom* argv)
+{
+    std::string ret = (s) ? std::string(s->s_name) + " " : "";
+
+    ret += to_string(argc, argv);
+
+    return ret;
 }
 
 extern std::string to_string(long argc, t_atom* argv)
@@ -276,7 +287,9 @@ extern std::string to_string(long argc, t_atom* argv)
         if (a.a_type == A_SYM)
             a_str = a.a_w.w_sym->s_name;
 
-        ret += a_str + " ";
+        ret += a_str;
+        if (i < (argc - 1))
+            ret += " ";
     }
     return ret;
 }
@@ -315,4 +328,40 @@ extern std::string to_func_argument_string(t_symbol* s, long argc, t_atom* argv)
         return std::string(s->s_name);
     else
         return std::string(s->s_name) + ", " + p2;
+}
+
+// ---
+extern bool check_arguments(long argc, t_atom* argv, const std::vector<e_max_atomtypes>& types)
+{
+    if (argc != types.size())
+        return false;
+
+    for (int i = 0; i < argc; i++) {
+        if (argv[i].a_type != types[i])
+            return false;
+    }
+
+    return true;
+}
+
+// ---
+void maxpy_import_module(std::string& module)
+{
+    t_symbol* ret = NULL;
+    path_absolutepath(&ret, gensym((module + ".py").c_str()), 0, 0);
+
+    if (!ret) {
+        py::exec("import " + module);
+        return;
+    }
+
+    short id;
+    char fn[MAX_FILENAME_CHARS];
+    path_frompathname(ret->s_name, &id, fn);
+    char ret2[MAX_PATH_CHARS];
+    path_toabsolutesystempath(id, fn, ret2);
+
+    py::exec("import importlib.util\nspec = importlib.util.spec_from_file_location('" + module + "', '" + ret2 + "')\n" + module + " = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(" + module + ")\n");
+
+    post("py: loaded %s", module.c_str());
 }

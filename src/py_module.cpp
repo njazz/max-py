@@ -1,4 +1,6 @@
 // py.module
+// import:  load module
+// receives [func_name args...] message
 
 #include <stdarg.h>
 
@@ -24,10 +26,11 @@ namespace py = pybind11;
 
 #include "convert.hpp"
 
+#include "py_box.hpp"
 //
-typedef struct _py_module {
-    t_object ob;
-    void* out1;
+typedef struct _py_module : public PyBox {
+//    t_object ob;
+//    void* outlet_1;
 
     std::string module = "";
 
@@ -52,18 +55,25 @@ void py_module_import(t_py_module* x, t_symbol* s, long argc, t_atom* argv)
 
     x->module = n.a_w.w_sym->s_name;
 
-    try {
 
-        t_symbol* ret = NULL;
-        gensym("none");
+
+        t_symbol* ret = gensym("none");
+
         path_absolutepath(&ret, gensym((x->module + ".py").c_str()), 0, 0);
 
-        if (!ret) {
-            // trying to import module in Python search path
-            py::exec("import "+x->module);
-            return;
-        }
+//        if (!ret) {
+//            // trying to import module in Python search path
 
+
+//        }
+
+        try{
+        py::exec("import "+x->module);
+        return;
+        }catch(std::exception)
+        {};
+
+            try {
         short id;
         char fn[MAX_FILENAME_CHARS];
         path_frompathname(ret->s_name, &id, fn);
@@ -75,7 +85,7 @@ void py_module_import(t_py_module* x, t_symbol* s, long argc, t_atom* argv)
         post("py.module: loaded %s", x->module.c_str());
 
     } catch (std::exception& e) {
-        error("py.module: failed to import module %s:", x->module.c_str());
+        error("py.module: failed to import module %s", x->module.c_str());
         error(e.what());
     };
 }
@@ -92,7 +102,7 @@ void py_module_anything(t_py_module* x, t_symbol* s, long argc, t_atom* argv)
 
         std::vector<c_atom> a;
         to_atoms(a, obj);
-        outlet_anything(x->out1, gensym("list"), a.size(), a.data());
+        outlet_anything(x->outlet_1, gensym("list"), a.size(), a.data());
     } catch (std::exception& e) {
         error("py.module: %s", e.what());
     };
@@ -103,7 +113,7 @@ void* py_module_new(t_symbol* s, long argc, t_atom* argv)
     t_py_module* x = NULL;
 
     if ((x = (t_py_module*)object_alloc((t_class*)py_module_class))) {
-        x->out1 = outlet_new(x, NULL);
+        x->outlet_1 = outlet_new(x, NULL);
     }
 
     if (argc == 1)
@@ -134,7 +144,7 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     py_module_class = c;
 
-    init_interpreter();
+    maxpy_init();
 
     object_post((t_object*)py_module_class, "py.module: loaded");
 
