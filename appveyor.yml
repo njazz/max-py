@@ -18,7 +18,7 @@ environment:
   - PYTHON: "C:\\Python36-x64"
     PYTHON_VERSION: "3.6.x" # currently 3.6.5
     PYTHON_ARCH: "64"
-    arch: Win64`
+    arch: Win64
 matrix:
   fast_finish: true
 
