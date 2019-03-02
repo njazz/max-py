@@ -1,0 +1,68 @@
+version: '{build}'
+branches:
+  only:
+  - master
+clone_folder: c:\projects\cmake-init
+image:
+# - Visual Studio 2013
+# - Visual Studio 2015
+- Visual Studio 2017
+configuration:
+- Release
+- Debug
+platform:
+- x64
+environment:
+  matrix:
+  # - arch: #does not work, Release|x64 not a valid target
+  - PYTHON: "C:\\Python36-x64"
+    PYTHON_VERSION: "3.6.x" # currently 3.6.5
+    PYTHON_ARCH: "64"
+    arch: "Win64"
+matrix:
+  fast_finish: true
+
+install:
+  # Install Python (from the official .msi of https://python.org) and pip when
+  # not already installed.
+  - ps: if (-not(Test-Path($env:PYTHON))) { & appveyor\install.ps1 }
+
+  # Prepend newly installed Python to the PATH of this build (this cannot be
+  # done from inside the powershell script as it would require to restart
+  # the parent CMD process).
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+
+  # Check that we have the expected version and architecture for Python
+  - "python --version"
+  - "python -c \"import struct; print(struct.calcsize('P') * 8)\""
+
+  # Upgrade to the latest version of pip to avoid it displaying warnings
+  # about it being out of date.
+  - "python -m pip install --upgrade pip"
+
+  - "SET LIBPATH=%LIBPATH%;%PYTHON%\\libs"
+  - "SET LIB=%LIB%;%PYTHON%\\libs"
+
+# skip unsupported combinations
+init:
+- set arch=
+- if "%arch%"=="Win64" ( set arch= Win64)
+- echo %arch%
+- echo %APPVEYOR_BUILD_WORKER_IMAGE%
+- if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" ( set generator="Visual Studio 15 2017%arch%" )
+- if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" ( set generator="Visual Studio 14 2015%arch%" )
+- if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( set generator="Visual Studio 12 2013%arch%" )
+- echo %generator%
+
+before_build:
+- cmd: |-
+    git submodule update --init --recursive
+    mkdir build
+    cd build
+    cmake --version
+    cmake .. -G %generator%
+    ls
+build:
+  project: c:\projects\cmake-init\build\max_py.sln
+  verbosity: minimal
+  parallel: true
