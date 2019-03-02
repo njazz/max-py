@@ -14,7 +14,7 @@ platform:
 - x64
 environment:
   matrix:
-  - arch: Win64
+#   - arch: Win64
   # - arch: #does not work, Release|x64 not a valid target
   - PYTHON: "C:\\Python36-x64"
     PYTHON_VERSION: "3.6.x" # currently 3.6.5
@@ -23,7 +23,11 @@ matrix:
   fast_finish: true
 
 install:
-# Prepend newly installed Python to the PATH of this build (this cannot be
+  # Install Python (from the official .msi of https://python.org) and pip when
+  # not already installed.
+  - ps: if (-not(Test-Path($env:PYTHON))) { & appveyor\install.ps1 }
+  
+  # Prepend newly installed Python to the PATH of this build (this cannot be
   # done from inside the powershell script as it would require to restart
   # the parent CMD process).
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
