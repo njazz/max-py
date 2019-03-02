@@ -1,4 +1,5 @@
 # max-py: Python externals for MaxMSP
+[![Build Status](https://travis-ci.org/njazz/max-py.svg?branch=master)](https://travis-ci.org/njazz/max-py)
 
 
 Embedding Python 2 / 3 in MaxMSP with pybind11
