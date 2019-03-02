@@ -1,6 +1,7 @@
 # max-py: Python externals for MaxMSP
 [![Build Status](https://travis-ci.org/njazz/max-py.svg?branch=master)](https://travis-ci.org/njazz/max-py)
 [![Build status](https://ci.appveyor.com/api/projects/status/lu577mn5euj54tra?svg=true)](https://ci.appveyor.com/project/njazz/max-py)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnjazz%2Fmax-py.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnjazz%2Fmax-py?ref=badge_shield)
 
 
 
@@ -45,3 +46,7 @@ EXPERIMENTAL/INCOMPLETE object functions
 - **object.method_names()**
 
 Current version: 0.0.1
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnjazz%2Fmax-py.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnjazz%2Fmax-py?ref=badge_large)
