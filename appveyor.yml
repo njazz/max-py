@@ -58,8 +58,9 @@ before_build:
     cd build
     cmake --version
     cmake .. -G %generator%
+    ls
 build:
-  project: c:\projects\cmake-init\build\template.sln
+  project: c:\projects\cmake-init\build\max_py.sln
   verbosity: minimal
   parallel: true
 
