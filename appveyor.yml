@@ -16,11 +16,10 @@ environment:
   matrix:
   - arch: Win64
   # - arch: #does not work, Release|x64 not a valid target
-matrix:
-  - PYTHON: "C:\\Python36-x64"
+    - PYTHON: "C:\\Python36-x64"
     PYTHON_VERSION: "3.6.x" # currently 3.6.5
     PYTHON_ARCH: "64"
-    
+matrix:
   fast_finish: true
 
 # skip unsupported combinations
