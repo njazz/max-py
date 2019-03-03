@@ -46,5 +46,12 @@ PYBIND11_EMBEDDED_MODULE(maxpy, m)
         auto ret = std::make_shared<EObject>(n);
         return ret;
     });
+
+    m.def("__print", [](py::object obj){
+        std::vector<c_atom> dest;
+        to_atoms(dest,obj);
+        auto s = to_string(dest.size(),dest.data());
+        post("max-py: %s", s.c_str());
+    });
 }
 }

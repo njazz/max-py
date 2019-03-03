@@ -22,8 +22,17 @@ extern void maxpy_init()
 
     try {
         py::exec("import maxpy as max");
+
+        // TODO: better way
+        py::exec("\
+from __future__ import print_function\n\
+#import __builtin__\n\
+\n\
+def print(args, **kwargs):\n\
+    max.__print(args)\n\
+    #_builtin__.print('max-py:', *args, **kwargs)");
     } catch (std::exception& e) {
-        error("failed to load maxpy module");
+        error("failed to load maxpy module: %s", e.what());
     }
 }
 }
