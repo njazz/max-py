@@ -12,6 +12,7 @@ set (LIB
     src/lib/c_atom.cpp
     src/lib/py_box.cpp
     src/lib/e_object.cpp
+    src/lib/receive_dispatch.cpp
     )
 
 include_directories(.)
@@ -89,6 +90,7 @@ py_external("exec")
 py_external("func")
 py_external("module")
 py_external("callback")
+py_external("receive")
 
 # TODO:
 
