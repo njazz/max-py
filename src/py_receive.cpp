@@ -32,7 +32,6 @@ namespace py = pybind11;
 
 #include "receive_dispatch.hpp"
 
-std::map<std::string, std::vector<PyBox*> > ReceiveDispatch::_outletMap;
 //
 typedef struct _py_receive : public PyBox {
     std::string name = "";

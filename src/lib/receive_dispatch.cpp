@@ -1,5 +1,7 @@
 #include "receive_dispatch.hpp"
 
+std::map<std::string, std::vector<PyBox*> > ReceiveDispatch::_outletMap;
+
 void ReceiveDispatch::_AddBox(std::string sym, PyBox* out)
 {
     if (_outletMap.find(sym) == _outletMap.end()) {
