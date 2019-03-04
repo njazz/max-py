@@ -9,15 +9,17 @@ Embedding Python 2 / 3 in MaxMSP with pybind11
 
 Objects:
 
-**[py.eval]** converts Max message to string and passes it to Python eval(). Returns Python object converted to Max message or single atom.
+**[py.eval]** converts Max message to string and passes it to Python eval(). Outputs Python object converted to Max message or single atom.
 
 **[py.exec]** converts Max message to string and runs it with Python exec().
 
-**[py.func]** binds object to specified Python function ([py.func (class.)function_name] or [py.func module (class.)function_name]). Accepts Max message, returns Python object converted to Max message or single atom.
+**[py.func]** binds object to specified Python function ([py.func (class.)function_name] or [py.func module (class.)function_name]). Accepts Max message, outputs Python object converted to Max message or single atom.
 
 **[py.module]** allows to call functions with [(class.)function_name args...] messages to object [py.module module_name]. Otherwise work same as [py.func]
 
-**[py.callback]** with callback_name as argument adds callback_name function to the embedded 'max' module that can be called from Python code. When called, returns arguments from outlet. callback_name should be unique for each [py.callback] box
+**[py.callback]** works with callback_name as argument. Adds function 'callback_name()' to the embedded 'max' module. This new function can be called directly from Python code. When it is called from Python code, outputs its arguments through its outlet. 'callback_name' should be unique for each [py.callback] box.
+
+**[py.receive]** works the same way as [py.callback] but allows multiple instances with the same callback_name.
 
 ## Currently supported Python types:
 
