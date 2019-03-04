@@ -29,8 +29,8 @@ namespace py = pybind11;
 #include "py_box.hpp"
 //
 typedef struct _py_module : public PyBox {
-//    t_object ob;
-//    void* outlet_1;
+    //    t_object ob;
+    //    void* outlet_1;
 
     std::string module = "";
 
@@ -54,26 +54,17 @@ void py_module_import(t_py_module* x, t_symbol* s, long argc, t_atom* argv)
         return;
 
     x->module = n.a_w.w_sym->s_name;
+    t_symbol* ret = gensym("none");
 
+    path_absolutepath(&ret, gensym((x->module + ".py").c_str()), 0, 0);
 
-
-        t_symbol* ret = gensym("none");
-
-        path_absolutepath(&ret, gensym((x->module + ".py").c_str()), 0, 0);
-
-//        if (!ret) {
-//            // trying to import module in Python search path
-
-
-//        }
-
-        try{
-        py::exec("import "+x->module);
+    try {
+        py::exec("import " + x->module);
         return;
-        }catch(std::exception)
-        {};
+    } catch (std::exception) {
+    };
 
-            try {
+    try {
         short id;
         char fn[MAX_FILENAME_CHARS];
         path_frompathname(ret->s_name, &id, fn);
@@ -81,7 +72,6 @@ void py_module_import(t_py_module* x, t_symbol* s, long argc, t_atom* argv)
         path_toabsolutesystempath(id, fn, ret2);
 
         py::exec("import importlib.util\nspec = importlib.util.spec_from_file_location('" + x->module + "', '" + ret2 + "')\n" + x->module + " = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(" + x->module + ")\n");
-
         post("py.module: loaded %s", x->module.c_str());
 
     } catch (std::exception& e) {
@@ -92,7 +82,7 @@ void py_module_import(t_py_module* x, t_symbol* s, long argc, t_atom* argv)
 
 void py_module_anything(t_py_module* x, t_symbol* s, long argc, t_atom* argv)
 {
-    std::string code = x->module+".";
+    std::string code = x->module + ".";
     code += std::string(s->s_name) + "("; //(s) ? (std::string(s->s_name) + " ") : "";
     code += to_func_argument_string(argc, argv) + ")";
 
@@ -138,7 +128,6 @@ int C74_EXPORT main(void)
         0L, A_GIMME, 0);
 
     class_addmethod(c, (method)py_module_import, "import", A_GIMME, 0);
-
     class_addmethod(c, (method)py_module_anything, "anything", A_GIMME, 0);
 
     class_register(CLASS_BOX, c);
